@@ -17,23 +17,25 @@
 </head>
 <body class="bg-gray-100">
 
-    <header class="flex flex-wrap justify-between items-center bg-blue-900 text-white p-6">
-        <div class="logo">
-            <img src="Swiss Express logo.png" alt="Swiss Express Logo" class="h-12">
+    <header class="bg-blue-900 bg-opacity-75 fixed w-full z-10 top-0 left-0">
+        <div class="container mx-auto flex flex-wrap items-center justify-between p-4 md:p-6">
+            <div class="logo">
+                <img src="Swiss Express logo.png" alt="Swiss Express Logo" class="h-12">
+            </div>
+            <nav class="w-full md:w-auto">
+                <ul class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-6">
+                    <li><a href="index.html" class="text-white hover:underline">Home</a></li>
+                    <li><a href="booking.html" class="text-white hover:underline">Book a Ticket</a></li>
+                    <li><a href="routes.html" class="text-white hover:underline">Routes & Timetable</a></li>
+                    <li><a href="loyalty.html" class="text-white hover:underline">Loyalty Program</a></li>
+                    <li><a href="login.html" class="text-white hover:underline">Login</a></li>
+                    <li><a href="contact.html" class="text-white hover:underline">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul class="flex flex-wrap space-x-4 md:space-x-6">
-                <li><a href="index.html" class="hover:underline">Home</a></li>
-                <li><a href="booking.html" class="hover:underline">Book a Ticket</a></li>
-                <li><a href="routes.html" class="hover:underline">Routes & Timetable</a></li>
-                <li><a href="loyalty.html" class="hover:underline">Loyalty Program</a></li>
-                <li><a href="login.html" class="hover:underline">Login</a></li>
-                <li><a href="contact.html" class="hover:underline">Contact</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <section class="dashboard py-16 px-4 md:px-8">
+    <section class="dashboard py-16 px-4 md:px-8 mt-20">
         <h2 class="text-3xl font-semibold text-center mb-8">User Dashboard</h2>
         <div class="max-w-4xl mx-auto bg-white p-6 rounded-xl shadow-lg">
             <h3 class="text-xl font-semibold">Welcome back, [User Name]!</h3>
