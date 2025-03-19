@@ -25,12 +25,12 @@
 </head>
 <body class="bg-gray-100">
 
-    <header class="flex justify-between items-center bg-blue-900 text-white p-6">
-       <div class="logo">
+    <header class="flex flex-wrap justify-between items-center bg-blue-900 text-white p-6">
+        <div class="logo">
             <img src="Swiss Express logo.png" alt="Swiss Express Logo" class="h-12">
         </div>
         <nav>
-            <ul class="flex space-x-6">
+            <ul class="flex flex-wrap space-x-4 md:space-x-6">
                 <li><a href="index.html" class="hover:underline">Home</a></li>
                 <li><a href="booking.html" class="hover:underline">Book a Ticket</a></li>
                 <li><a href="routes.html" class="hover:underline">Routes & Timetable</a></li>
@@ -41,7 +41,7 @@
         </nav>
     </header>
 
-    <section class="booking py-16 px-8">
+    <section class="booking py-16 px-4 md:px-8">
         <h2 class="text-3xl font-semibold text-center mb-8">Book Your Ticket</h2>
         <form class="max-w-lg mx-auto bg-white p-6 rounded-xl shadow-lg" id="booking-form">
             <label for="from" class="block text-lg font-medium">From:</label>
@@ -165,7 +165,7 @@
                 const selectedBus = event.target.getAttribute('data-bus-id');
                 const urlParams = new URLSearchParams(window.location.search);
                 urlParams.set('bus', selectedBus);
-                window.location.href = 'PassagerDetails.html?' + urlParams.toString();
+                window.location.href = 'PassengerDetails.html?' + urlParams.toString();
             }
         });
 

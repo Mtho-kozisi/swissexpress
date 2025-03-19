@@ -47,8 +47,7 @@
             });
         }
     </script>
-	
-	<style>
+    <style>
         body {
             background: url('SE07.jpg') no-repeat center center fixed;
             background-size: cover;
@@ -58,12 +57,12 @@
 </head>
 <body class="bg-gray-100">
 
-    <header class="flex justify-between items-center bg-blue-900 text-white p-6">
+    <header class="flex flex-wrap justify-between items-center bg-blue-900 text-white p-6">
         <div class="logo">
             <img src="Swiss Express logo.png" alt="Swiss Express Logo" class="h-12">
         </div>
         <nav>
-            <ul class="flex space-x-6">
+            <ul class="flex flex-wrap space-x-4 md:space-x-6">
                 <li><a href="index.html" class="hover:underline">Home</a></li>
                 <li><a href="booking.html" class="hover:underline">Book a Ticket</a></li>
                 <li><a href="routes.html" class="hover:underline">Routes & Timetable</a></li>
@@ -74,40 +73,39 @@
         </nav>
     </header>
 
-    <section class="routes py-16 px-8">
+    <section class="routes py-16 px-4 md:px-8">
         <h2 class="text-3xl font-semibold text-center mb-8">Our Routes & Timetable</h2>
         <div class="max-w-4xl mx-auto bg-white p-6 rounded-xl shadow-lg">
             <h3 class="text-xl font-semibold">Johannesburg to Bulawayo</h3>
             <ul class="list-disc ml-6">
-               <li>First bus</li>
-				<li>Departure: 15:30 PM</li>
+                <li>First bus</li>
+                <li>Departure: 15:30 PM</li>
                 <li>Arrival: 05:30 AM</li>
-				<li>Second bus</li>
-				<li>Departure: 16:30 PM</li>
+                <li>Second bus</li>
+                <li>Departure: 16:30 PM</li>
                 <li>Arrival: 07:00 AM</li>
-				<li>Third bus</li>				
-				<li>Departure: 17:00 PM</li>
+                <li>Third bus</li>
+                <li>Departure: 17:00 PM</li>
                 <li>Arrival: 8:00 am</li>
             </ul>
             <h3 class="text-xl font-semibold mt-6">Bulawayo to Johannesburg</h3>
             <ul class="list-disc ml-6">
-			
                 <li>First bus</li>
-				<li>Departure: 15:00 PM</li>
+                <li>Departure: 15:00 PM</li>
                 <li>Arrival: 05:30 AM</li>
-				<li>Second bus</li>
-				<li>Departure: 16:00 PM</li>
+                <li>Second bus</li>
+                <li>Departure: 16:00 PM</li>
                 <li>Arrival: 07:00 AM</li>
-				<li>Third bus</li>				
-				<li>Departure: 17:00 PM</li>
+                <li>Third bus</li>
+                <li>Departure: 17:00 PM</li>
                 <li>Arrival: 8:00 am</li>
             </ul>
-			<h3 class="text-xl font-semibold">Johannesburg to Harare</h3>
+            <h3 class="text-xl font-semibold">Johannesburg to Harare</h3>
             <ul class="list-disc ml-6">
                 <li>Departure: 14:30 AM</li>
                 <li>Arrival: 12:00 PM</li>
             </ul>
-			<h3 class="text-xl font-semibold">Harare to Johannesburg</h3>
+            <h3 class="text-xl font-semibold">Harare to Johannesburg</h3>
             <ul class="list-disc ml-6">
                 <li>Departure: 14:00 AM</li>
                 <li>Arrival: 08:00 AM</li>
@@ -115,7 +113,7 @@
         </div>
     </section>
 
-    <section class="map py-16 px-8">
+    <section class="map py-16 px-4 md:px-8">
         <h2 class="text-3xl font-semibold text-center mb-8">Route Map</h2>
         <div id="map" class="w-full h-96 bg-gray-300"></div>
     </section>
@@ -123,6 +121,5 @@
     <footer class="bg-blue-900 text-white text-center py-4">
         <p>&copy; 2025 Swiss Express. All Rights Reserved.</p>
     </footer>
-
 </body>
 </html>
