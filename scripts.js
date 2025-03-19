@@ -1,5 +1,3 @@
-// JavaScript for Dynamic User Dashboard Updates
-
 document.addEventListener('DOMContentLoaded', () => {
     // Placeholder for user details, you could fetch this from a database in a real-world scenario.
     const userName = 'John Doe'; // Example User Name
@@ -69,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    / Handling Check Availability button click
+    // Handling Check Availability button click
     document.getElementById('check-availability').addEventListener('click', function() {
         const from = document.getElementById('from').value;
         const to = document.getElementById('to').value;

@@ -42,13 +42,13 @@ header {
 }
 
 .hero h1 {
-    font-size: 4rem;
+    font-size: 2.5rem; /* Reduced font size for better mobile view */
     font-weight: bold;
     margin-bottom: 20px;
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1rem; /* Reduced font size for better mobile view */
     margin-bottom: 30px;
 }
 
@@ -58,7 +58,7 @@ header {
     color: white;
     text-decoration: none;
     border-radius: 30px;
-    font-size: 1.2rem;
+    font-size: 1rem; /* Reduced font size for better mobile view */
     transition: background-color 0.3s;
 }
 
@@ -74,7 +74,8 @@ header .logo img {
 header nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 15px; /* Reduced gap for better mobile view */
+    flex-wrap: wrap; /* Allow wrapping for better mobile view */
 }
 
 header nav ul li a {
@@ -90,7 +91,7 @@ header nav ul li a:hover {
 
 /* Section Styles */
 section {
-    padding: 50px 20px;
+    padding: 30px 20px; /* Reduced padding for better mobile view */
     text-align: center;
 }
 
@@ -105,9 +106,9 @@ section p {
 /* Dashboard Styles */
 .dashboard, .employee-dashboard {
     background-color: white;
-    max-width: 1100px;
+    max-width: 100%; /* Adjusted for better mobile view */
     margin: 0 auto;
-    padding: 30px;
+    padding: 20px; /* Reduced padding for better mobile view */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
