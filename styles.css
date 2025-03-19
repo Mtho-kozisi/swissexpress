@@ -1,0 +1,144 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    background-size: cover; /* Make sure the background covers the entire page */
+    background-position: center; /* Center the background image */
+    background-attachment: fixed; /* Make the background fixed while scrolling */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+/* Transparent Header Styles */
+header {
+    background-color: rgba(29, 78, 216, 0.7); /* Blue with 70% opacity */
+    padding: 20px 30px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute; /* To keep it on top of the hero section */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    background-image: url('SE06.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.hero a {
+    padding: 15px 30px;
+    background-color: #1D4ED8;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+}
+
+.hero a:hover {
+    background-color: #2563EB;
+}
+
+
+header .logo img {
+    height: 50px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #FFDD00; /* Highlight color */
+}
+
+/* Section Styles */
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+section h2, section h3 {
+    color: #1D4ED8;
+}
+
+section p {
+    color: #666;
+}
+
+/* Dashboard Styles */
+.dashboard, .employee-dashboard {
+    background-color: white;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard h3, .employee-dashboard h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.dashboard h4, .employee-dashboard h4 {
+    font-size: 18px;
+    margin-top: 20px;
+    color: #333;
+}
+
+.dashboard ul, .employee-dashboard ul {
+    text-align: left;
+    padding-left: 20px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1D4ED8;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+.hidden {
+    display: none;
+}

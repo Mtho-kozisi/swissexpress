@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation</title>
+    <link rel="icon" type="image/png" href="Swiss Express logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+	
+	<style>
+        body {
+            background: url('SEFLEET2.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .hidden { display: none; }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <header class="flex justify-between items-center bg-blue-900 text-white p-6">
+       <div class="logo">
+            <img src="Swiss Express logo.png" alt="Swiss Express Logo" class="h-12">
+        </div>
+        <nav>
+            <ul class="flex space-x-6">
+                <li><a href="index.html" class="hover:underline">Home</a></li>
+                <li><a href="booking.html" class="hover:underline">Book a Ticket</a></li>
+                <li><a href="routes.html" class="hover:underline">Routes & Timetable</a></li>
+                <li><a href="loyalty.html" class="hover:underline">Loyalty Program</a></li>
+                <li><a href="login.html" class="hover:underline">Login</a></li>
+                <li><a href="contact.html" class="hover:underline">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="confirmation py-16 px-8">
+        <h2 class="text-3xl font-semibold text-center mb-8">Confirm Your Details</h2>
+        <div class="max-w-lg mx-auto bg-white p-6 rounded-xl shadow-lg">
+            <h3 class="text-xl font-semibold mb-4">Passenger Details</h3>
+            <p><strong>Name:</strong> <span id="name"></span></p>
+            <p><strong>Surname:</strong> <span id="surname"></span></p>
+            <p><strong>Date of Birth:</strong> <span id="dob"></span></p>
+            <p><strong>Passenger Type:</strong> <span id="passenger-type"></span></p>
+            <p><strong>Title:</strong> <span id="title"></span></p>
+            <p><strong>Gender:</strong> <span id="gender"></span></p>
+            <p><strong>Passport Number:</strong> <span id="passport-number"></span></p>
+            <p><strong>Email Address:</strong> <span id="email"></span></p>
+            <p><strong>Contact Number:</strong> <span id="contact-number"></span></p>
+            <p><strong>Emergency Contact Number:</strong> <span id="emergency-contact-number"></span></p>
+
+            <h3 class="text-xl font-semibold mt-6 mb-4">Bus Details</h3>
+            <p><strong>Pickup:</strong> Wednesday 19 March 2025, 15:30, JOHANNESBURG</p>
+            <p><strong>Drop-Off:</strong> Thursday 20 March 2025, 07:00, BULAWAYO</p>
+            <p><strong>Duration:</strong> 17h 35m</p>
+            <p class="font-bold"><strong>Price:</strong> R700</p>
+
+            <button type="button" class="mt-6 bg-green-600 text-white py-3 px-6 rounded-full w-full" id="confirm-button">Confirm</button>
+        </div>
+    </section>
+
+    <footer class="bg-blue-900 text-white text-center py-4">
+        <p>&copy; 2025 Swiss Express. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            document.getElementById('name').textContent = urlParams.get('name');
+            document.getElementById('surname').textContent = urlParams.get('surname');
+            document.getElementById('dob').textContent = urlParams.get('dob');
+            document.getElementById('passenger-type').textContent = urlParams.get('passenger-type');
+            document.getElementById('title').textContent = urlParams.get('title');
+            document.getElementById('gender').textContent = urlParams.get('gender');
+            document.getElementById('passport-number').textContent = urlParams.get('passport-number');
+            document.getElementById('email').textContent = urlParams.get('email');
+            document.getElementById('contact-number').textContent = urlParams.get('contact-number');
+            document.getElementById('emergency-contact-number').textContent = urlParams.get('emergency-contact-number');
+
+            document.getElementById('confirm-button').addEventListener('click', function() {
+                const queryString = window.location.search;
+                window.location.href = 'New reservation.html' + queryString;
+            });
+        });
+    </script>
+</body>
+</html>

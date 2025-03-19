@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Routes & Timetable - Swiss Express</title>
+    <link rel="icon" type="image/png" href="Swiss Express logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Maps JavaScript API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script>
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 6,
+                center: {lat: -24.651, lng: 28.686}
+            });
+
+            var directionsService = new google.maps.DirectionsService();
+            var directionsRenderer = new google.maps.DirectionsRenderer();
+            directionsRenderer.setMap(map);
+
+            var request = {
+                origin: 'Johannesburg, South Africa',
+                destination: 'Bulawayo, Zimbabwe',
+                waypoints: [
+                    {location: 'Johannesburg Powerhouse, South Africa'},
+                    {location: 'Johannesburg Park Station, South Africa'},
+                    {location: 'Midrand Big Bird Engen Garage, South Africa'},
+                    {location: 'Pretoria Bosman Station, South Africa'},
+                    {location: 'Sasol Musina, South Africa'},
+                    {location: 'Beitbridge Border Post'},
+                    {location: 'Makhado, South Africa'},
+                    {location: 'West Nicoleson, Zimbabwe'},
+                    {location: 'Collen Bawn, Zimbabwe'},
+                    {location: 'Gwanda, Zimbabwe'},
+                    {location: 'Mbalabala, Zimbabwe'},
+                    {location: 'Esigodini, Zimbabwe'}
+                ],
+                travelMode: 'DRIVING'
+            };
+
+            directionsService.route(request, function(result, status) {
+                if (status == 'OK') {
+                    directionsRenderer.setDirections(result);
+                }
+            });
+        }
+    </script>
+	
+	<style>
+        body {
+            background: url('SE07.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .hidden { display: none; }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <header class="flex justify-between items-center bg-blue-900 text-white p-6">
+        <div class="logo">
+            <img src="Swiss Express logo.png" alt="Swiss Express Logo" class="h-12">
+        </div>
+        <nav>
+            <ul class="flex space-x-6">
+                <li><a href="index.html" class="hover:underline">Home</a></li>
+                <li><a href="booking.html" class="hover:underline">Book a Ticket</a></li>
+                <li><a href="routes.html" class="hover:underline">Routes & Timetable</a></li>
+                <li><a href="loyalty.html" class="hover:underline">Loyalty Program</a></li>
+                <li><a href="login.html" class="hover:underline">Login</a></li>
+                <li><a href="contact.html" class="hover:underline">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="routes py-16 px-8">
+        <h2 class="text-3xl font-semibold text-center mb-8">Our Routes & Timetable</h2>
+        <div class="max-w-4xl mx-auto bg-white p-6 rounded-xl shadow-lg">
+            <h3 class="text-xl font-semibold">Johannesburg to Bulawayo</h3>
+            <ul class="list-disc ml-6">
+               <li>First bus</li>
+				<li>Departure: 15:30 PM</li>
+                <li>Arrival: 05:30 AM</li>
+				<li>Second bus</li>
+				<li>Departure: 16:30 PM</li>
+                <li>Arrival: 07:00 AM</li>
+				<li>Third bus</li>				
+				<li>Departure: 17:00 PM</li>
+                <li>Arrival: 8:00 am</li>
+            </ul>
+            <h3 class="text-xl font-semibold mt-6">Bulawayo to Johannesburg</h3>
+            <ul class="list-disc ml-6">
+			
+                <li>First bus</li>
+				<li>Departure: 15:00 PM</li>
+                <li>Arrival: 05:30 AM</li>
+				<li>Second bus</li>
+				<li>Departure: 16:00 PM</li>
+                <li>Arrival: 07:00 AM</li>
+				<li>Third bus</li>				
+				<li>Departure: 17:00 PM</li>
+                <li>Arrival: 8:00 am</li>
+            </ul>
+			<h3 class="text-xl font-semibold">Johannesburg to Harare</h3>
+            <ul class="list-disc ml-6">
+                <li>Departure: 14:30 AM</li>
+                <li>Arrival: 12:00 PM</li>
+            </ul>
+			<h3 class="text-xl font-semibold">Harare to Johannesburg</h3>
+            <ul class="list-disc ml-6">
+                <li>Departure: 14:00 AM</li>
+                <li>Arrival: 08:00 AM</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="map py-16 px-8">
+        <h2 class="text-3xl font-semibold text-center mb-8">Route Map</h2>
+        <div id="map" class="w-full h-96 bg-gray-300"></div>
+    </section>
+
+    <footer class="bg-blue-900 text-white text-center py-4">
+        <p>&copy; 2025 Swiss Express. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

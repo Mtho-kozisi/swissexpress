@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Buses</title>
+    <link rel="icon" type="image/png" href="Swiss Express logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="scripts.js"></script>
+</head>
+<body>
+
+    <header class="flex justify-between items-center bg-blue-900 text-white p-6">
+        <div class="logo">
+            <img src="Swiss Express logo.png" alt="Swiss Express Logo" class="h-12">
+        </div>
+    </header>
+
+    <section class="available-buses py-16 px-8">
+        <h2 class="text-3xl font-semibold text-center mb-8">Select a Bus</h2>
+        <form id="bus-selection-form" class="max-w-lg mx-auto bg-white p-6 rounded-xl shadow-lg">
+            <label for="bus" class="block text-lg font-medium">Available Buses:</label>
+            <select id="bus" class="w-full p-3 mt-2 border border-gray-300 rounded-md">
+                <option value="" disabled selected>Select a Bus</option>
+            </select>
+
+            <button type="submit" class="mt-6 bg-blue-600 text-white py-3 px-6 rounded-full w-full">Confirm</button>
+        </form>
+    </section>
+
+    <footer class="bg-blue-900 text-white text-center py-4">
+        <p>&copy; 2025 Swiss Express. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Get query parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const from = urlParams.get('from');
+        const to = urlParams.get('to');
+        const date = urlParams.get('date');
+        const seats = urlParams.get('seats');
+
+        // You can use this data to display available buses based on locations
+        console.log('From:', from, 'To:', to, 'Date:', date, 'Seats:', seats);
+
+        // Example bus availability logic (just an example, you'd dynamically fetch this data)
+        let buses = [
+            { id: 'bus1', name: 'Bus 1', status: 'Available' },
+            { id: 'bus2', name: 'Bus 2', status: 'Full' },
+            { id: 'bus3', name: 'Bus 3', status: 'Available' }
+        ];
+
+        // Display buses
+        const busSelect = document.getElementById('bus');
+        buses.forEach(bus => {
+            const option = document.createElement('option');
+            option.value = bus.id;
+            option.text = `${bus.name} - ${bus.status}`;
+            if (bus.status === 'Full') {
+                option.disabled = true; // Disable the option if the bus is full
+            }
+            busSelect.appendChild(option);
+        });
+    });
+
+    document.getElementById('bus-selection-form').addEventListener('submit', function(e) {
+        e.preventDefault();  // Prevent default form submission
+        
+        const selectedBus = document.getElementById('bus').value;  // Get the selected bus
+        
+        // Get current URL parameters (if any)
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        // Set the 'bus' parameter to the selected bus
+        urlParams.set('bus', selectedBus);
+
+        // Redirect to PassengerDetails.html with updated URL parameters
+        window.location.href = 'PassagerDetails.html?' + urlParams.toString();
+    });
+    </script>
+</body>
+</html>

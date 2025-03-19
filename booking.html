@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Ticket</title>
+    <link rel="icon" type="image/png" href="Swiss Express logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="scripts.js"></script>
+    <style>
+        body {
+            background: url('SEFLEET.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .hidden { display: none; }
+        .fade-in {
+            animation: fadeIn 1s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <header class="flex justify-between items-center bg-blue-900 text-white p-6">
+       <div class="logo">
+            <img src="Swiss Express logo.png" alt="Swiss Express Logo" class="h-12">
+        </div>
+        <nav>
+            <ul class="flex space-x-6">
+                <li><a href="index.html" class="hover:underline">Home</a></li>
+                <li><a href="booking.html" class="hover:underline">Book a Ticket</a></li>
+                <li><a href="routes.html" class="hover:underline">Routes & Timetable</a></li>
+                <li><a href="loyalty.html" class="hover:underline">Loyalty Program</a></li>
+                <li><a href="login.html" class="hover:underline">Login</a></li>
+                <li><a href="contact.html" class="hover:underline">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="booking py-16 px-8">
+        <h2 class="text-3xl font-semibold text-center mb-8">Book Your Ticket</h2>
+        <form class="max-w-lg mx-auto bg-white p-6 rounded-xl shadow-lg" id="booking-form">
+            <label for="from" class="block text-lg font-medium">From:</label>
+            <select id="from" class="w-full p-3 mt-2 border border-gray-300 rounded-md">
+                <option value="" disabled selected>Select Pick Up Location</option>
+                <option value="johannesburg-parkstation">Johannesburg Parkstation</option>
+                <option value="midrand-big-bird-engen">Midrand Big Bird Engen</option>
+                <option value="pretoria-bosman-station">Pretoria Bosman Station</option>
+                <option value="gwanda-engen-garage">Gwanda Engen Garage</option>
+                <option value="bulawayo-office">Bulawayo Office</option>
+                <option value="harare-roadporte">Harare Roadporte</option>
+            </select>
+
+            <label for="to" class="block text-lg font-medium mt-4">To:</label>
+            <select id="to" class="w-full p-3 mt-2 border border-gray-300 rounded-md">
+                <option value="" disabled selected>Select Drop Off Location</option>
+                <option value="johannesburg-parkstation">Johannesburg Parkstation</option>
+                <option value="midrand-big-bird-engen">Midrand Big Bird Engen</option>
+                <option value="pretoria-bosman-station">Pretoria Bosman Station</option>
+                <option value="gwanda-engen-garage">Gwanda Engen Garage</option>
+                <option value="bulawayo-office">Bulawayo Office</option>
+                <option value="harare-roadporte">Harare Roadporte</option>
+            </select>
+
+            <label for="date" class="block text-lg font-medium mt-4">Travel Date:</label>
+            <input type="date" id="date" class="w-full p-3 mt-2 border border-gray-300 rounded-md">
+
+            <div class="mt-4">
+                <input type="checkbox" id="return" class="mr-2">
+                <label for="return" class="text-lg font-medium">Return Ticket</label>
+            </div>
+
+            <div id="return-date-container" class="hidden mt-4">
+                <label for="return-date" class="block text-lg font-medium">Return Date:</label>
+                <input type="date" id="return-date" class="w-full p-3 mt-2 border border-gray-300 rounded-md">
+            </div>
+
+            <label for="seats" class="block text-lg font-medium mt-4">Seats:</label>
+            <select id="seats" class="w-full p-3 mt-2 border border-gray-300 rounded-md">
+                <option>1 Seat</option>
+                <option>2 Seats</option>
+                <option>3 Seats</option>
+            </select>
+
+            <button type="button" id="check-availability" class="mt-6 bg-blue-600 text-white py-3 px-6 rounded-full w-full">Check Availability</button>
+        </form>
+
+        <div id="bus-list" class="max-w-lg mx-auto bg-white p-6 rounded-xl shadow-lg mt-8 hidden fade-in">
+            <h3 class="text-xl font-semibold mb-4">Available Buses</h3>
+            <div id="bus-items"></div>
+        </div>
+    </section>
+
+    <footer class="bg-blue-900 text-white text-center py-4">
+        <p>&copy; 2025 Swiss Express. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('check-availability').addEventListener('click', function() {
+            const from = document.getElementById('from').value;
+            const to = document.getElementById('to').value;
+            const date = document.getElementById('date').value;
+            const seats = document.getElementById('seats').value;
+
+            if (from && to && date && seats) {
+                const busList = document.getElementById('bus-list');
+                const busItems = document.getElementById('bus-items');
+                busItems.innerHTML = ''; // Clear previous results
+
+                const buses = [
+                    {
+                        id: 'First Coach',
+                        pickupTime: '15:30 pm',
+                        dropoffTime: '06:00am',
+                        hours: '17h 30m',
+                        date: 'Wednesday 19 March 2025',
+                        price: 'R700'
+                    },
+                    {
+                        id: 'bus2',
+                        pickupTime: '16:30',
+                        dropoffTime: '07:00',
+                        hours: '14h 30m',
+                        date: 'Wednesday 19 March 2025',
+                        price: 'R700'
+                    },
+                    {
+                        id: 'bus3',
+                        pickupTime: '17:30',
+                        dropoffTime: '06:00',
+                        hours: '14h 00m',
+                        date: 'Wednesday 19 March 2025',
+                        price: 'R800'
+                    }
+                ];
+
+                buses.forEach(bus => {
+                    const busItem = document.createElement('div');
+                    busItem.classList.add('bus-item', 'p-4', 'border', 'border-gray-300', 'rounded-md', 'mb-4');
+                    busItem.innerHTML = `
+                        <p><strong>Bus ID:</strong> ${bus.id}</p>
+                        <p><strong>Pickup Time:</strong> ${bus.pickupTime}</p>
+                        <p><strong>Dropoff Time:</strong> ${bus.dropoffTime}</p>
+                        <p><strong>Hours:</strong> ${bus.hours}</p>
+                        <p><strong>Date:</strong> ${bus.date}</p>
+                        <p><strong>Price:</strong> ${bus.price}</p>
+                        <button class="select-bus mt-4 bg-green-600 text-white py-2 px-4 rounded-full" data-bus-id="${bus.id}">Select</button>
+                    `;
+                    busItems.appendChild(busItem);
+                });
+
+                busList.classList.remove('hidden');
+                busList.classList.add('fade-in');
+            } else {
+                alert('Please fill in all the required fields.');
+            }
+        });
+
+        document.getElementById('bus-items').addEventListener('click', function(event) {
+            if (event.target.classList.contains('select-bus')) {
+                const selectedBus = event.target.getAttribute('data-bus-id');
+                const urlParams = new URLSearchParams(window.location.search);
+                urlParams.set('bus', selectedBus);
+                window.location.href = 'PassagerDetails.html?' + urlParams.toString();
+            }
+        });
+
+        document.getElementById('return').addEventListener('change', function() {
+            const returnDateContainer = document.getElementById('return-date-container');
+            if (this.checked) {
+                returnDateContainer.classList.remove('hidden');
+            } else {
+                returnDateContainer.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
