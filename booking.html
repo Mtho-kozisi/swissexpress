@@ -167,16 +167,7 @@
                 const selectedBus = event.target.getAttribute('data-bus-id');
                 const urlParams = new URLSearchParams(window.location.search);
                 urlParams.set('bus', selectedBus);
-                window.location.href = 'PassengerDetails.html?' + urlParams.toString();
-            }
-        });
-
-        document.getElementById('return').addEventListener('change', function() {
-            const returnDateContainer = document.getElementById('return-date-container');
-            if (this.checked) {
-                returnDateContainer.classList.remove('hidden');
-            } else {
-                returnDateContainer.classList.add('hidden');
+                window.location.href = 'PassagerDetails.html?' + urlParams.toString();
             }
         });
     </script>
