@@ -47,6 +47,8 @@ header {
 header nav ul {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 15px;
 }
 
@@ -186,11 +188,17 @@ nav ul li a:hover {
 
 /* Responsive Navigation */
 @media screen and (max-width: 768px) {
+    header {
+        flex-direction: row; /* Keeps the header items in a row */
+        justify-content: space-between; /* Ensures spacing between items */
+    }
+
     nav ul {
         display: flex;
         flex-direction: row; /* Keep the menu items horizontal */
         gap: 10px; /* Reduced gap for better fitting */
-        flex-wrap: nowrap; /* Prevent the items from stacking */
+        flex-wrap: wrap; /* Allow wrapping if necessary */
+        justify-content: center; /* Center the items */
     }
 
     nav ul li {
