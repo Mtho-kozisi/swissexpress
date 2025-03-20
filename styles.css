@@ -185,19 +185,18 @@ nav ul li a {
 /* Responsive Navigation */
 @media screen and (max-width: 768px) {
     header {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row; /* Keeps the header items in a row */
+        justify-content: space-between; /* Keeps spacing between the items */
     }
 
     nav ul {
-        flex-direction: column;
-        text-align: center;
-        padding: 0;
+        flex-direction: row; /* Keeps the menu items horizontal */
+        justify-content: flex-end; /* Aligns the menu items to the right */
     }
 
     nav ul li {
-        width: 100%;
-        padding: 10px 0;
+        width: auto; /* Remove width 100% to prevent stacking */
+        padding: 10px 15px; /* Adjust padding if needed */
     }
 }
 
