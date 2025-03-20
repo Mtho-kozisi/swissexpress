@@ -11,23 +11,41 @@
 </head>
 <body class="bg-gray-100">
     <!-- Header with Transparency -->
-    <header class="bg-blue-900 bg-opacity-70 w-full">
-        <div class="container mx-auto flex items-center justify-between p-4 md:p-6">
-            <div class="logo">
-                <img src="Swiss Express logo.png" alt="Swiss Express Logo" class="h-12">
-            </div>
-            <nav class="w-full md:w-auto">
-                <ul class="flex flex-wrap items-center justify-center space-x-4 md:space-x-6">
-                    <li><a href="index.html" class="text-white hover:underline">Home</a></li>
-                    <li><a href="booking.html" class="text-white hover:underline">Book a Ticket</a></li>
-                    <li><a href="routes.html" class="text-white hover:underline">Routes & Timetable</a></li>
-                    <li><a href="loyalty.html" class="text-white hover:underline">Loyalty Program</a></li>
-                    <li><a href="login.html" class="text-white hover:underline">Login</a></li>
-                    <li><a href="contact.html" class="text-white hover:underline">Contact</a></li>
-                </ul>
-            </nav>
+    <header class="flex flex-wrap items-center justify-between bg-blue-900 bg-opacity-70 text-white p-6 fixed w-full top-0 z-10">
+        <div class="logo">
+            <img src="Swiss Express logo.png" alt="Swiss Express Logo" class="h-12">
+        </div>
+        <nav class="hidden md:flex">
+            <ul class="flex flex-wrap space-x-4 md:space-x-6">
+                <li><a href="index.html" class="hover:underline">Home</a></li>
+                <li><a href="booking.html" class="hover:underline">Book a Ticket</a></li>
+                <li><a href="routes.html" class="hover:underline">Routes & Timetable</a></li>
+                <li><a href="loyalty.html" class="hover:underline">Loyalty Program</a></li>
+                <li><a href="login.html" class="hover:underline">Login</a></li>
+                <li><a href="signup.html" class="hover:underline">Signup</a></li>
+                <li><a href="contact.html" class="hover:underline">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="md:hidden">
+            <button id="menu-toggle" class="text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
         </div>
     </header>
+
+    <nav id="mobile-menu" class="hidden md:hidden bg-blue-900 text-white p-6">
+        <ul class="space-y-4">
+            <li><a href="index.html" class="block hover:underline">Home</a></li>
+            <li><a href="booking.html" class="block hover:underline">Book a Ticket</a></li>
+            <li><a href="routes.html" class="block hover:underline">Routes & Timetable</a></li>
+            <li><a href="loyalty.html" class="block hover:underline">Loyalty Program</a></li>
+            <li><a href="login.html" class="block hover:underline">Login</a></li>
+            <li><a href="signup.html" class="block hover:underline">Signup</a></li>
+            <li><a href="contact.html" class="block hover:underline">Contact</a></li>
+        </ul>
+    </nav>
 
     <!-- Hero Section with Background Image -->
     <section class="hero bg-cover bg-center text-center py-32 md:py-48" style="background-image: url('SE05.jpg');">
@@ -175,5 +193,17 @@
     <footer class="bg-blue-900 text-white text-center py-4">
         <p>&copy; 2025 Swiss Express. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        // JavaScript to toggle the mobile menu
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+            } else {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
 </body>
 </html>
