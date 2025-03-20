@@ -1,12 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     // JavaScript to toggle the mobile menu
-    document.getElementById('menu-toggle').addEventListener('click', function () {
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (mobileMenu.classList.contains('hidden')) {
-            mobileMenu.classList.remove('hidden');
-        } else {
-            mobileMenu.classList.add('hidden');
-        }
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
     });
 
     // Placeholder for user details, you could fetch this from a database in a real-world scenario.
