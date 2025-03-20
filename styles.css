@@ -2,37 +2,18 @@
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f7f7f7;
-    background-size: cover; /* Make sure the background covers the entire page */
-    background-position: center; /* Center the background image */
-    background-attachment: fixed; /* Make the background fixed while scrolling */
-    color: #333;
     margin: 0;
     padding: 0;
 }
 
-/* Header Styles */
-/* Transparent Header Styles */
-header {
-    background-color: rgba(29, 78, 216, 0.7); /* Blue with 70% opacity */
-    padding: 20px 30px;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: absolute; /* To keep it on top of the hero section */
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 10;
-}
-
-/* Hero Section */
+/* Hero Section (Covers Navbar Too) */
 .hero {
     position: relative;
     height: 100vh;
     background-image: url('SE06.jpg');
     background-position: center;
     background-size: cover;
+    background-attachment: fixed; /* Keep background in place when scrolling */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -41,41 +22,33 @@ header {
     color: white;
 }
 
-.hero h1 {
-    font-size: 2.5rem; /* Reduced font size for better mobile view */
-    font-weight: bold;
-    margin-bottom: 20px;
+
+/* Ensure text and navbar appear above the overlay */
+.hero h1, .hero p, .hero a, header {
+    position: relative;
+    z-index: 2;
 }
 
-.hero p {
-    font-size: 1rem; /* Reduced font size for better mobile view */
-    margin-bottom: 30px;
-}
-
-.hero a {
-    padding: 15px 30px;
-    background-color: #1D4ED8;
+/* Transparent Navigation Bar */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent; /* Fully transparent */
     color: white;
-    text-decoration: none;
-    border-radius: 30px;
-    font-size: 1rem; /* Reduced font size for better mobile view */
-    transition: background-color 0.3s;
+    z-index: 2; /* Above overlay */
 }
 
-.hero a:hover {
-    background-color: #2563EB;
-}
-
-
-header .logo img {
-    height: 50px;
-}
-
+/* Navbar Links */
 header nav ul {
     list-style: none;
     display: flex;
-    gap: 15px; /* Reduced gap for better mobile view */
-    flex-wrap: wrap; /* Allow wrapping for better mobile view */
+    gap: 15px;
 }
 
 header nav ul li a {
@@ -89,9 +62,35 @@ header nav ul li a:hover {
     color: #FFDD00; /* Highlight color */
 }
 
+/* Hero Text */
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+.hero a {
+    padding: 15px 30px;
+    background-color: #1D4ED8;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.hero a:hover {
+    background-color: #2563EB;
+}
+
 /* Section Styles */
 section {
-    padding: 30px 20px; /* Reduced padding for better mobile view */
+    padding: 30px 20px;
     text-align: center;
 }
 
@@ -106,9 +105,9 @@ section p {
 /* Dashboard Styles */
 .dashboard, .employee-dashboard {
     background-color: white;
-    max-width: 100%; /* Adjusted for better mobile view */
+    max-width: 100%;
     margin: 0 auto;
-    padding: 20px; /* Reduced padding for better mobile view */
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -130,7 +129,7 @@ section p {
     padding-left: 20px;
 }
 
-/* Footer Styles */
+/* Footer */
 footer {
     background-color: #1D4ED8;
     color: white;
@@ -140,6 +139,8 @@ footer {
     width: 100%;
     bottom: 0;
 }
+
+/* Hide Elements */
 .hidden {
     display: none;
 }
