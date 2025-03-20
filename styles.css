@@ -22,7 +22,6 @@ body {
     color: white;
 }
 
-
 /* Ensure text and navbar appear above the overlay */
 .hero h1, .hero p, .hero a, header {
     position: relative;
@@ -156,7 +155,7 @@ img {
     margin: auto;
 }
 
-//* Header Navigation */
+/* Header Navigation */
 header {
     display: flex;
     justify-content: space-between;
@@ -185,15 +184,8 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-
-/* Responsive Navigation */
 /* Responsive Navigation */
 @media screen and (max-width: 768px) {
-    header {
-        flex-direction: row; /* Keeps the header items in a row */
-        justify-content: space-between; /* Ensures spacing between items */
-    }
-
     nav ul {
         display: flex;
         flex-direction: row; /* Keep the menu items horizontal */
@@ -209,5 +201,3 @@ nav ul li a:hover {
         font-size: 0.9rem; /* Reduced font size */
     }
 }
-
-
