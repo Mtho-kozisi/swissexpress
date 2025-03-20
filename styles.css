@@ -156,31 +156,35 @@ img {
     margin: auto;
 }
 
-/* Ensure navigation adjusts to screen size */
+//* Header Navigation */
 header {
     display: flex;
-    flex-wrap: wrap; /* Allows navigation items to wrap on smaller screens */
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
 }
 
 nav ul {
-    list-style: none;
     display: flex;
+    justify-content: space-between;
     gap: 15px;
-    flex-wrap: wrap; /* Allows items to stack when the screen is small */
+    flex-wrap: nowrap; /* Ensure items don't wrap */
 }
 
 nav ul li {
-    display: inline-block;
+    list-style-type: none;
 }
 
 nav ul li a {
     text-decoration: none;
     color: white;
-    padding: 10px;
+    padding: 8px 15px;
+    transition: color 0.3s;
 }
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
 
 /* Responsive Navigation */
 /* Responsive Navigation */
